@@ -49,10 +49,14 @@ const nextISSTimesForMyLocation = function() {
     .then(fetchCoordsByIP)
     .then(fetchISSFlyOverTimes)
     .then((body) => { 
-      const  flyOverTimes  = JSON.parse(body);
-      //console.log(flyOverTimes)
+      const flyOverTimes = JSON.parse(body);
+      //Can also destructure the object and only 
+      //return the response portion of the data
+      // const { response } = JSON.parse(body);
+      // return {response };
       return flyOverTimes;
     }); 
 }
 
 module.exports = { nextISSTimesForMyLocation };
+
